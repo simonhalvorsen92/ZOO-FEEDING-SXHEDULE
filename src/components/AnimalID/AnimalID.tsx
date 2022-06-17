@@ -48,13 +48,16 @@ export const AnimalID = () => {
   return (
     <div>
       <div className="singleAnimal-container">
-        <img src={animal.imageUrl} alt={animal.name} /> - {animal.name}
-        <div className="singleAnimalInfo">
+        <div className="singleImg">
           <h3>{animal.name}</h3>
+          <img src={animal.imageUrl} alt={animal.name} />
+        </div>
+
+        <div className="singleAnimalInfo">
           <div className="textInfo">
-            {animal.latinName}
-            {animal.yearOfBirth}
-            {animal.shortDescription}
+            <p>{animal.latinName} : Is the latin name</p>
+            <p>Born: {animal.yearOfBirth}</p>
+            <p>{animal.shortDescription}</p>
             {animal.longDescription}
           </div>
         </div>

@@ -1,27 +1,43 @@
+
+
 .singleAnimal-container{
     display: flex;
     background-color: rgb(255, 255, 255);
+  
+}
+.singleImg{
+display: flex;
+flex-direction: column;
+
+align-items: center;
+}
+.singleImg h3 {
+    
 }
 .singleAnimal-container img {
    
     width: 200px;
     height: 200px;
     margin: 10px;
+   
 }
 .singleAnimalInfo{
-    
-    background-color: lightblue;
+    display: flex;
+    background-color: lightgray;
     width: 70%;
+    color: darkgreen;
+
 }
 .get-food{
     width: 30%;
     background-color: lightblue;
+    padding: 20px;
     margin: 10px;
 }
 .textInfo{
     display: flex;
     flex-direction: column;
-    border: solid black 1px;
+    border: solid darkgreen 3px;
     padding: 2%;
     margin:  2%;
 }

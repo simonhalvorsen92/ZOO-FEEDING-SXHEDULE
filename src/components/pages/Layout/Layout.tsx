@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import IAnimal from "../../../models/IAnimal";
 
 export const Layout = () => {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState<number>(0);
   const [animals, setAnimals] = useState<IAnimal[]>([]);
   useEffect(() => {
     if (animals.length !== 0) return;
@@ -33,37 +33,30 @@ export const Layout = () => {
           </button>
         </header>
         <section>
-          {/* <div className="allAnimals"> */}
           <motion.div ref={carousel} className="carousel">
             <motion.div
               drag="x"
-              dragConstraints={{ right: 0, left: -width }}
+              dragConstraints={{ right: +700, left: -700 }}
               className="inner-carousel"
             >
               {animals.map((animal) => {
                 return (
                   <motion.div key={animal.id} className="item">
-                    {/* <div key={animal.id}> */}
                     <Link to={"/animal/" + animal.id} key={animal.id}>
                       <h3>{animal.name}</h3>
                       <img src={animal.imageUrl} alt="all the animals" />
-                      {/* </div> */}
                     </Link>
                   </motion.div>
                 );
               })}
             </motion.div>
           </motion.div>
-          {/* </div> */}
 
-          <Link to="/animals">COMPONENT ANIMALS </Link>
           <br></br>
         </section>
         <main>
-          <p>detta är MAin där allt innhehål ska visas</p>
           <Outlet></Outlet>
         </main>
-        <footer></footer>
       </div>
     </>
   );
