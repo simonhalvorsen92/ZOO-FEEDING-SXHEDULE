@@ -1,43 +1,97 @@
+@media screen and (max-width:768px) {
+.singleAnimal-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+       
 
-
-.singleAnimal-container{
+    }
+.singleImg {
     display: flex;
-    background-color: rgb(255, 255, 255);
-  
-}
-.singleImg{
-display: flex;
-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+        justify-items: center;
+        align-items: center;
+ width: 100%;
 
-align-items: center;
 }
-.singleImg h3 {
-    
+.singleImg img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
-.singleAnimal-container img {
-   
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-   
-}
-.singleAnimalInfo{
+.singleAnimalInfo {
     display: flex;
     background-color: lightgray;
-    width: 70%;
+    width: 100%;
+    padding: 20px;
     color: darkgreen;
 
 }
-.get-food{
-    width: 30%;
+.get-food {
+    width: 100%;
     background-color: lightblue;
     padding: 20px;
     margin: 10px;
 }
-.textInfo{
+.textInfo {
     display: flex;
     flex-direction: column;
     border: solid darkgreen 3px;
     padding: 2%;
-    margin:  2%;
+    margin: 2%;
+
 }
+}
+
+@media screen and (min-width:768px) {
+    .singleAnimal-container {
+            display: flex;
+            background-color: rgb(255, 255, 255);
+    
+        }
+    
+        .singleImg {
+            display: flex;
+            flex-direction: column;
+    
+            align-items: center;
+        }
+    
+        .singleImg h3 {}
+    
+        .singleAnimal-container img {
+    
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+    
+        }
+    
+        .singleAnimalInfo {
+            display: flex;
+            background-color: lightgray;
+            width: 70%;
+            color: darkgreen;
+    
+        }
+    
+        .get-food {
+            width: 30%;
+            background-color: lightblue;
+            padding: 20px;
+            margin: 10px;
+        }
+    
+        .textInfo {
+            display: flex;
+            flex-direction: column;
+            border: solid darkgreen 3px;
+            padding: 2%;
+            margin: 2%;
+        }
+    
+    }
+
+
+

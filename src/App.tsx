@@ -3,8 +3,9 @@ import "./App.css";
 
 import { AnimalID } from "./components/AnimalID/AnimalID";
 import { Animals } from "./components/pages/Animals";
-import { Home } from "./components/pages/Home";
+
 import { Layout } from "./components/pages/Layout/Layout";
+import { Home } from "./Home/Home";
 
 function App() {
   return (
