@@ -1,0 +1,27 @@
+.singleAnimal-container{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+.singleAnimal-container img {
+   
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+.singleAnimalInfo{
+    
+    background-color: lightblue;
+    width: 70%;
+}
+.get-food{
+    width: 30%;
+    background-color: lightblue;
+    margin: 10px;
+}
+.textInfo{
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    padding: 2%;
+    margin:  2%;
+}

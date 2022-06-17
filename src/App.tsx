@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Layout } from "./components/pages/Layout/Layout";
-import { AnimalID } from "./components/pages/AnimalID";
+
+import { AnimalID } from "./components/AnimalID/AnimalID";
 import { Animals } from "./components/pages/Animals";
 import { Home } from "./components/pages/Home";
+import { Layout } from "./components/pages/Layout/Layout";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path="/" element={<Layout></Layout>}>
           <Route index element={<Home />}></Route>
           <Route path="/animals" element={<Animals />}></Route>
-          <Route path="/animal:id" element={<AnimalID />}></Route>
+          <Route path="/animal/:id" element={<AnimalID />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

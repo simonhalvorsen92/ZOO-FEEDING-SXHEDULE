@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { IAnimal } from "../../../models/IAnimal";
+
 import "./Layout.css";
 import { motion } from "framer-motion";
+import IAnimal from "../../../models/IAnimal";
+
 export const Layout = () => {
   const [width, setWidth] = useState(0);
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -22,12 +24,9 @@ export const Layout = () => {
     setWidth(carousel.current!.scrollWidth - carousel.current!.offsetWidth);
   }, []);
 
-  // useEffect(() => {
-  //   console.log(carousel.current);
-  // }, []);
   return (
     <>
-      <div className="Layout-container">
+      <div className="layout-container">
         <header>
           <button>
             <Link to="/">HEM</Link>
@@ -45,11 +44,11 @@ export const Layout = () => {
                 return (
                   <motion.div key={animal.id} className="item">
                     {/* <div key={animal.id}> */}
-                    {animal.name}
-                    <Link to="/animal:id">
+                    <Link to={"/animal/" + animal.id} key={animal.id}>
+                      <h3>{animal.name}</h3>
                       <img src={animal.imageUrl} alt="all the animals" />
+                      {/* </div> */}
                     </Link>
-                    {/* </div> */}
                   </motion.div>
                 );
               })}
@@ -59,7 +58,6 @@ export const Layout = () => {
 
           <Link to="/animals">COMPONENT ANIMALS </Link>
           <br></br>
-          <Link to="/animal:id">Denna link är för ID till djurren </Link>
         </section>
         <main>
           <p>detta är MAin där allt innhehål ska visas</p>

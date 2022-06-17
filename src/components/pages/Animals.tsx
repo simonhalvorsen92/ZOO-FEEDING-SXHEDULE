@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { IAnimal } from "../../models/IAnimal";
+import { Link } from "react-router-dom";
+import IAnimal from "../../models/IAnimal";
 
 export const Animals = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -10,15 +11,19 @@ export const Animals = () => {
       .get<IAnimal[]>("https://animals.azurewebsites.net/api/animals")
       .then((response) => {
         setAnimals(response.data);
+        console.log(response.data);
       });
   });
   return (
     <>
-      <div>
-        {animals.map((animal) => {
-          return <div key={animal.id}>{animal.name}</div>;
-        })}
-      </div>
+      {animals.map((animal) => {
+        return (
+          <Link to={"/animal/" + animal.id} key={animal.id}>
+            <h3>{animal.name}</h3>
+            <img src={animal.imageUrl} alt={animal.name} />
+          </Link>
+        );
+      })}
     </>
   );
 };
